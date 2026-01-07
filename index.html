@@ -2,114 +2,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexus — Central de Comando</title>
-  <meta name="description" content="Central de comando pessoal: estudos, ferramentas, emergência e oportunidades." />
+  <title>Operação Continuidade</title>
+  <meta name="description" content="Verificação, prevenção e continuidade digital para pequenos negócios." />
   <style>
-    :root{
-      --bg:#0b0e14;--panel:#121826;--ink:#e6e9f0;--muted:#9aa4bf;--accent:#7aa2ff;--danger:#ff6b6b;--ok:#5bd9a9;
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f1220;
+      color: #eaeaf0;
+      line-height: 1.6;
     }
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto; background:linear-gradient(180deg,#0b0e14,#0f1424); color:var(--ink)}
-    header{position:sticky;top:0;z-index:9;background:rgba(11,14,20,.8);backdrop-filter:blur(8px);border-bottom:1px solid #1c2440}
-    header .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;max-width:1200px;margin:auto;padding:12px 16px}
-    .brand{display:flex;gap:10px;align-items:center}
-    .dot{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok)}
-    nav a{color:var(--muted);text-decoration:none;margin:0 8px;font-weight:600}
-    nav a:hover{color:var(--ink)}
-    main{max-width:1200px;margin:24px auto;padding:0 16px;display:grid;grid-template-columns:280px 1fr;gap:16px}
-    aside{background:var(--panel);border:1px solid #1c2440;border-radius:14px;padding:14px}
-    .card{background:var(--panel);border:1px solid #1c2440;border-radius:14px;padding:14px;margin-bottom:12px}
-    h1,h2,h3{margin:.2em 0}
-    h1{font-size:1.4rem} h2{font-size:1.1rem} h3{font-size:1rem}
-    .muted{color:var(--muted)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    button{background:#1b255a;border:1px solid #24327a;color:var(--ink);padding:10px 12px;border-radius:10px;font-weight:700;cursor:pointer}
-    button:hover{background:#22307a}
-    .danger{background:#3a1111;border-color:#6a1f1f}
-    .ok{background:#123a2a;border-color:#1f6a52}
-    input,textarea{width:100%;background:#0b1022;border:1px solid #1c2440;color:var(--ink);border-radius:10px;padding:10px}
-    textarea{min-height:120px}
-    footer{max-width:1200px;margin:24px auto;padding:0 16px;color:var(--muted)}
-    @media(max-width:900px){main{grid-template-columns:1fr}}
+    header {
+      padding: 40px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #141a3a, #0f1220);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      max-width: 600px;
+      margin: 20px auto 0;
+      color: #b8bbd6;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #181c3f;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+    .card p {
+      color: #c7c9e2;
+      font-size: 0.95rem;
+    }
+    .cta {
+      text-align: center;
+      padding: 60px 20px;
+      background: #141a3a;
+    }
+    .cta h2 {
+      margin-bottom: 15px;
+    }
+    .cta p {
+      margin-bottom: 30px;
+      color: #c7c9e2;
+    }
+    .cta a {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #3a6df0;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.85rem;
+      color: #8f92b8;
+    }
   </style>
 </head>
-<body>
-<header>
-  <div class="wrap">
-    <div class="brand"><span class="dot"></span><strong>NEXUS</strong></div>
-    <nav>
-      <a href="#dashboard">Dashboard</a>
-      <a href="#estudos">Estudos</a>
-      <a href="#ferramentas">Ferramentas</a>
-      <a href="#emergencia">Emergência</a>
-      <a href="#oportunidades">Oportunidades</a>
-    </nav>
-  </div>
-</header><main>
-  <aside>
-    <div class="card">
-      <h3>Status</h3>
-      <p class="muted">Online • Acessível de qualquer lugar</p>
-    </div>
-    <div class="card">
-      <h3>Acesso Rápido</h3>
-      <div class="grid">
-        <button onclick="scrollToId('estudos')">Estudos</button>
-        <button onclick="scrollToId('ferramentas')">Ferramentas</button>
-        <button class="danger" onclick="scrollToId('emergencia')">Emergência</button>
-        <button class="ok" onclick="scrollToId('oportunidades')">Ganhos</button>
+<body>  <header>
+    <h1>Operação Continuidade</h1>
+    <p>Verificação, prevenção e continuidade digital para pequenos negócios que precisam funcionar todos os dias — sem sustos.</p>
+  </header>  <section>
+    <h2>O que fazemos</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Check-up Digital</h3>
+        <p>Análise periódica de redes Wi‑Fi, roteadores, acessos e configurações básicas de segurança.</p>
+      </div>
+      <div class="card">
+        <h3>Prevenção Silenciosa</h3>
+        <p>Correções simples antes que problemas se tornem prejuízo ou paralisação.</p>
+      </div>
+      <div class="card">
+        <h3>Relatórios Claros</h3>
+        <p>Resumo mensal objetivo, sem termos confusos, mostrando o que foi verificado e ajustado.</p>
+      </div>
+      <div class="card">
+        <h3>Continuidade</h3>
+        <p>Acompanhamento constante para que seu negócio continue operando mesmo quando algo falha.</p>
       </div>
     </div>
-    <div class="card">
-      <h3>Backup Local</h3>
-      <p class="muted">Salva notas no seu navegador (funciona offline depois de abrir).</p>
-      <button onclick="saveAll()">Salvar Tudo</button>
-      <button onclick="loadAll()">Carregar</button>
+  </section>  <section>
+    <h2>Para quem é</h2>
+    <div class="grid">
+      <div class="card"><p>Pequenos comércios</p></div>
+      <div class="card"><p>Clínicas e consultórios</p></div>
+      <div class="card"><p>Escritórios e contábeis</p></div>
+      <div class="card"><p>Oficinas, mercados e escolas</p></div>
     </div>
-  </aside>  <section>
-    <div id="dashboard" class="card">
-      <h1>Central de Comando</h1>
-      <p class="muted">Tudo que você estuda, usa e ativa — num único ponto.</p>
-    </div><div id="estudos" class="card">
-  <h2>Estudos & Conhecimento</h2>
-  <textarea id="notes" placeholder="Registre aprendizados, links, insights..."></textarea>
-</div>
-
-<div id="ferramentas" class="card">
-  <h2>Ferramentas</h2>
-  <div class="grid">
-    <input placeholder="Nome da ferramenta" />
-    <input placeholder="Link / Comando" />
-    <input placeholder="Observações" />
-  </div>
-</div>
-
-<div id="emergencia" class="card">
-  <h2>Emergência</h2>
-  <p class="muted">Acesso rápido em situações críticas.</p>
-  <textarea id="emergency" placeholder="Protocolos, contatos, planos rápidos..."></textarea>
-</div>
-
-<div id="oportunidades" class="card">
-  <h2>Oportunidades de Ganho</h2>
-  <textarea id="ops" placeholder="Ideias, leads, oportunidades detectadas..."></textarea>
-</div>
-
-  </section>
-</main><footer>
-  <p>© Nexus — Central pessoal de alta autonomia.</p>
-</footer><script>
-  const saveAll=()=>{
-    localStorage.setItem('notes',notes.value);
-    localStorage.setItem('emergency',emergency.value);
-    localStorage.setItem('ops',ops.value);
-    alert('Salvo localmente.');
-  }
-  const loadAll=()=>{
-    notes.value=localStorage.getItem('notes')||'';
-    emergency.value=localStorage.getItem('emergency')||'';
-    ops.value=localStorage.getItem('ops')||'';
-  }
-  const scrollToId=id=>document.getElementById(id).scrollIntoView({behavior:'smooth'});
-  loadAll();
-</script></body>
+  </section>  <section>
+    <h2>Por que funciona</h2>
+    <div class="grid">
+      <div class="card">
+        <p>Porque segurança não é promessa — é rotina. O que é acompanhado não para.</p>
+      </div>
+      <div class="card">
+        <p>Você não depende de soluções caras, apenas de atenção técnica constante.</p>
+      </div>
+      <div class="card">
+        <p>O serviço é simples, recorrente e confiável — exatamente como o sistema confia.</p>
+      </div>
+    </div>
+  </section>  <div class="cta">
+    <h2>Comece de forma simples</h2>
+    <p>Um serviço acessível, mensal e sem complicação. A segurança do seu negócio começa pela continuidade.</p>
+    <a href="mailto:contato@seudominio.com">Solicitar contato</a>
+  </div>  <footer>
+    <p>Operação Continuidade © 2026 — Estrutura, não promessa.</p>
+  </footer></body>
 </html>
